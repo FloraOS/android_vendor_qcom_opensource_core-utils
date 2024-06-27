@@ -1048,9 +1048,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>IIrisFeature</name>
+        </interface>
+    </hal>
     <!-- UMD Adaptor Service -->
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.umd</name>
+        <name>vendor.qti.hardware.umd</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
