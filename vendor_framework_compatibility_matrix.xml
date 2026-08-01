@@ -123,6 +123,23 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>dpmQmiService</instance>
         </interface>
     </hal>
+    <!-- AOSP dropped the HIDL memtrack HAL from its own framework matrices when
+         the AIDL one landed, but it did not drop support for it:
+         frameworks/native/services/memtrackproxy falls back to
+         V1_0_hidl::IMemtrack::getService() whenever no AIDL implementation is
+         registered. The QTI stack still ships that HIDL service
+         (android.hardware.memtrack@1.0-service over memtrack.<platform>), and
+         with no matrix listing the instance checkvintf rejects the device
+         manifest outright. Declare it here, which is what
+         DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE is for. -->
+    <hal format="hidl" optional="true">
+        <name>android.hardware.memtrack</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMemtrack</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.nfc</name>
         <version>1.0</version>
