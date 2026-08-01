@@ -1064,7 +1064,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- SEC Platform Service -->
     <hal format="aidl" optional="true">
         <name>vendor.qti.sec.featuremanager</name>
-        <version>1.0</version>
+        <version>1</version>
         <interface>
             <name>IFeatureManager</name>
             <instance>default</instance>
@@ -1072,7 +1072,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.sec.provisioningmanager</name>
-        <version>1.0</version>
+        <version>1</version>
         <interface>
             <name>IProvisioningManager</name>
             <instance>default</instance>
@@ -1080,7 +1080,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.sec.datamanager</name>
-        <version>1.0</version>
+        <version>1</version>
         <interface>
             <name>IDataManager</name>
             <instance>default</instance>
@@ -1088,7 +1088,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.sec.cloudagent</name>
-        <version>1.0</version>
+        <version>1</version>
         <interface>
             <name>ICloudAgent</name>
             <instance>default</instance>
