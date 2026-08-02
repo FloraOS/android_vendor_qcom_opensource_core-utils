@@ -25,4 +25,10 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE US
 
-export QTI_BUILDTOOLS_DIR=$(dirname ${BASH_SOURCE[0]})
+# BASH_SOURCE does not exist under zsh, which build/envsetup.sh supports as a
+# first class shell, and an unset array element expands to nothing there. That
+# left "dirname" with no operand - it printed a usage error on every
+# "source build/envsetup.sh" - and exported an empty QTI_BUILDTOOLS_DIR, so
+# build/build.sh would then look for its helpers at "/build/...".
+# In zsh a sourced file's path is in $0, so fall back to that.
+export QTI_BUILDTOOLS_DIR=$(dirname "${BASH_SOURCE[0]:-$0}")
